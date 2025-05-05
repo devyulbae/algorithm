@@ -1,2 +1,2 @@
 def solution(myString, pat):
-    return int(pat in myString.replace("A","C").replace("B","A").replace("C","B"))
+    return int("".join('B' if pat[x]=='A' else 'A' for x in range(len(pat))) in myString)
