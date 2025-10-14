@@ -1,16 +1,16 @@
 import sys
+N = int(sys.stdin.readline())
 
-def solve():
-    _ = input()
-    S = tuple(map(int, sys.stdin))
-    last = 0
-    ans = 0
-    for i in range(len(S)-1, -1, -1):
-        if S[i] > last:
-            last = S[i]
-            ans += 1
+cnt = 0
+max_num= 0
+arr = []
 
-    print(ans)
+for _ in range(N):
+    inp = int(sys.stdin.readline())
+    arr.append(inp)
 
-
-solve()
+for num in arr[::-1]:
+    if num > max_num:
+        max_num = num
+        cnt += 1
+print(cnt)
